@@ -1,10 +1,5 @@
- var clicks = 17;
-    function clickME() {
-    if (clicks <= 17) {
-       clicks += 1;
-        document.getElementById("clicks").innerHTML = clicks;
-        this.removeEventListener('clicks', clickME);
-     } else{
-    document.getElementById("id").disabled=true;
-}
-}
+const button = document.querySelector("nav button")
+const aside = document.querySelector("body > aside")
+button.addEventListener("click",function(){
+    aside.classList.toggle("is-shown")
+})

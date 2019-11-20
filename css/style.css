@@ -33,7 +33,7 @@ header {
     width: 100%;
     top: 0;
     z-index: 100;
-    min-height: 4em;
+    min-height: 8em;
 }
 
 body > header {
@@ -48,6 +48,11 @@ header h1 {
     padding: 0em;
 }
 
+header a {
+    color: black;
+    text-decoration: none;
+}
+
 header nav ul li a {
     font-family: 'Din condensed';
     text-decoration: none;
@@ -60,6 +65,39 @@ header nav ul li a {
 header a img {
     width: 3em;
     margin-right: 0.5em;
+}
+
+.button {
+    background-color: #000000;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    border-radius: 1em;
+    margin-top: 1rem;
+    height: 0.1em;
+    font-family: 'Din condensed';
+    font-size: 0.9em;
+}
+
+
+/*search*/
+
+.search type=submit {
+    border: 5px solid black;
+    padding: 40px;
+    max-width: 300px;
+    background-color: #414A47;
+    display: block;
+    width: 100%;
+    font-family: 'Din condensed';
+}
+
+.search H2 {
+    font-family: 'Din condensed';
 }
 
 
@@ -84,7 +122,7 @@ nav ul {
 
 article {
     position: relative;
-    min-height: 25em;
+    height: 15em;
     overflow: hidden;
 }
 
@@ -98,7 +136,7 @@ article > * {
 }
 
 article header H3 {
-    font-family: 'Oswald', sans-serif
+    font-family: 'Oswald', sans-serif;
 }
 
 article img {
@@ -106,6 +144,13 @@ article img {
     top: 0;
     left: 0;
     z-index: 5;
+    transition: .3s ease transform;
+    height: auto;
+    width: auto;
+}
+
+article:hover img {
+    transform: scale(1.1);
 }
 
 article p {
@@ -132,20 +177,20 @@ section img {
 }
 
 
-/* aside */
+/* article class = info */
 
-aside {
+.info {
     border: 5px solid black;
     padding: 40px;
     max-width: 300px;
     background-color: #414A47;
 }
 
-aside H3 {
+.info H3 {
     font-family: 'Oswald', sans-serif
 }
 
-aside button {
+.info input[type=submit] {
     background-color: #000000;
     border: none;
     outline: none;
@@ -155,12 +200,49 @@ aside button {
     text-decoration: none;
     display: inline-block;
     border-radius: 1em;
+    margin-top: 1rem;
 }
 
-aside p {
+.info p {
     font-family: 'Oswald', sans-serif;
     color: #fff;
     font-size: 0.8em;
+}
+
+.info input:focus,
+.info input:hover {
+    background-color: darkred
+}
+
+.info input:valid {
+    background: limegreen;
+}
+
+.info input {
+    background-color: white
+}
+
+.info input[type=submit]:hover {
+    background-color: cadetblue
+}
+
+.info input,
+.info label {
+    display: block;
+    width: 100%;
+}
+
+body > aside {
+    height: 0;
+    overflow: hidden;
+    background: #424242;
+    color: #f1f1f1;
+    transition: .3s ease-out all;
+}
+
+body > aside.is-shown {
+    display: block;
+    height: 10rem;
 }
 
 @media (min-width:40em) {
@@ -176,7 +258,7 @@ aside p {
         grid-column: 1/3;
     }
     main article {
-        min-height: 30em;
+        min-height: 20em;
     }
     main section {
         grid-column: 2/3;
